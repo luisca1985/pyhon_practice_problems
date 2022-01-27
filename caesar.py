@@ -1,21 +1,19 @@
 import string
 from string import ascii_lowercase, whitespace, punctuation
 
-def cipher(plain_ext: str, shift_number: int) -> str:
-    string
-    encrypted_text: str = ''
-    shift_number = shift_number % len(ascii_lowercase)
-    allowed_letters = ascii_lowercase * 2
-    whitespace_and_punctuation = whitespace + punctuation
-    for letter in plain_ext:
-        position = allowed_letters.find(letter)
-        if position != -1:
-            letter_shifted = allowed_letters[position + shift_number]
-            encrypted_text += letter_shifted
-        elif whitespace_and_punctuation.find(letter) != -1:
-            letter_shifted = allowed_letters[position + shift_number]
-            encrypted_text += letter
+
+def shift(letter: str, shift_number: int) -> str:
+    table = ascii_lowercase[shift_number:] + ascii_lowercase[:shift_number]
+    position = ascii_lowercase.find(letter)
+    letter_shifted = table[position] if position != -1 else letter
+    return letter_shifted
+
+
+def cipher(plain_text: str, shift_number: int) -> str:
+    encrypted_list = [shift(letter, shift_number) for letter in plain_text]
+    encrypted_text = ''.join(encrypted_list)
     return encrypted_text
+
 
 def cipher_with_translate(plain_text: str, shift_number: int) -> str:
     letters = ascii_lowercase
@@ -25,9 +23,9 @@ def cipher_with_translate(plain_text: str, shift_number: int) -> str:
     return encrypted_text
 
 
-
-if __name__=='__main__':
+if __name__ == '__main__':
     plain_text = 'abcd xyz'
-    shift_number = 4
-    encrypted_text = cipher_with_translate(plain_text, shift_number)
+    shift_number = -1
+    encrypted_text = cipher(plain_text, shift_number)
+    # encrypted_text = cipher_with_translate(plain_text, shift_number)
     print(encrypted_text)
