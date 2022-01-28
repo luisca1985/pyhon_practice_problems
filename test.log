@@ -1,0 +1,9 @@
+Jul 11 16:11:51:490 [139681125603136] dut: Revision: 64180
+Jul 11 16:11:51:490 [139681125603136] dut: Device State: ON
+Jul 11 16:11:51:490 [139681125603136] dut: dutinfo create: /Primary_dom/Secondary 10.220.42.244/48002 0x16f9870
+Jul 11 16:11:51:491 [139681125603136] dut: dutinfo create: /mbonnetrh67_domain/mbonnetcent64-1 10.220.40.252/48002 0x16fd0d0
+Jul 11 16:11:51:491 [139681125603136] dut: Device State: ERR
+Jul 11 16:11:51:491 [139681125603136] dut: dut SEC: session=1804560451
+Jul 11 16:11:51:492 [139681125603136] dut: dut SEC: version=1688
+Jul 11 16:11:51:495 [139681125603136] dut: dut SEC: ON
+Jul 11 16:11:51:498 [139681125603136] dut: Device State: OFF
